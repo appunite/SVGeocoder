@@ -35,13 +35,13 @@ typedef NSUInteger SVGeocoderRequestState;
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
 
-@property (nonatomic, retain) NSString *requestString;
-@property (nonatomic, assign) NSMutableData *responseData;
-@property (nonatomic, assign) NSURLConnection *connection;
-@property (nonatomic, assign) NSMutableURLRequest *request;
+@property (nonatomic, strong) NSString *requestString;
+@property (nonatomic, strong) NSMutableData *responseData;
+@property (nonatomic, strong) NSURLConnection *connection;
+@property (nonatomic, strong) NSMutableURLRequest *request;
 @property (nonatomic, readwrite) SVGeocoderRequestState state;
 
-@property (nonatomic, retain) NSTimer *timeoutTimer; // see http://stackoverflow.com/questions/2736967
+@property (nonatomic, strong) NSTimer *timeoutTimer; // see http://stackoverflow.com/questions/2736967
 @property (nonatomic, copy) void (^completionBlock)(NSArray *placemarks, NSError *error);
 
 @end
@@ -54,15 +54,10 @@ typedef NSUInteger SVGeocoderRequestState;
 #pragma mark -
 
 - (void)dealloc {
-    [responseData release];
-    [request release];
     [connection cancel];
-    [connection release];
     
     self.timeoutTimer = nil;
-    self.completionBlock = nil;
 
-	[super dealloc];
 }
 
 #pragma mark - Convenience Initializers
@@ -72,7 +67,7 @@ typedef NSUInteger SVGeocoderRequestState;
                                        address, @"address", nil];
     SVGeocoder *geocoder = [[self alloc] initWithParameters:parameters completion:block];
     [geocoder start];
-    return [geocoder autorelease];
+    return geocoder;
 }
 
 + (SVGeocoder *)geocode:(NSString *)address bounds:(MKCoordinateRegion)bounds completion:(void (^)(NSArray *, NSError *))block {
@@ -85,7 +80,7 @@ typedef NSUInteger SVGeocoderRequestState;
                                         bounds.center.longitude+(bounds.span.longitudeDelta/2.0)], @"bounds", nil];
     SVGeocoder *geocoder = [[self alloc] initWithParameters:parameters completion:block];
     [geocoder start];
-    return [geocoder autorelease];
+    return geocoder;
 }
 
 + (SVGeocoder *)geocode:(NSString *)address region:(NSString *)region completion:(void (^)(NSArray *, NSError *))block {
@@ -94,7 +89,7 @@ typedef NSUInteger SVGeocoderRequestState;
                                        region, @"region", nil];
     SVGeocoder *geocoder = [[self alloc] initWithParameters:parameters completion:block];
     [geocoder start];
-    return [geocoder autorelease];
+    return geocoder;
 }
 
 + (SVGeocoder *)reverseGeocode:(CLLocationCoordinate2D)coordinate completion:(void (^)(NSArray *, NSError *))block {
@@ -102,7 +97,7 @@ typedef NSUInteger SVGeocoderRequestState;
                                        [NSString stringWithFormat:@"%f,%f", coordinate.latitude, coordinate.longitude], @"latlng", nil];
     SVGeocoder *geocoder = [[self alloc] initWithParameters:parameters completion:block];
     [geocoder start];
-    return [geocoder autorelease];
+    return geocoder;
 }
 
 #pragma mark - Public Initializers
@@ -184,11 +179,50 @@ typedef NSUInteger SVGeocoderRequestState;
 - (void)setTimeoutTimer:(NSTimer *)newTimer {
     
     if(timeoutTimer)
-        [timeoutTimer invalidate], [timeoutTimer release], timeoutTimer = nil;
+        [timeoutTimer invalidate], timeoutTimer = nil;
     
     if(newTimer)
-        timeoutTimer = [newTimer retain];
+        timeoutTimer = newTimer;
 }
+
+#pragma mark - Geocoder operations
+
+
+- (void)geocode:(NSString *)address completion:(void (^)(NSArray *, NSError *))block {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
+                                       address, @"address", nil];
+    [self initWithParameters:parameters completion:block];
+    [self start];
+}
+
+- (void)geocode:(NSString *)address bounds:(MKCoordinateRegion)bounds completion:(void (^)(NSArray *, NSError *))block {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
+                                       address, @"address", 
+                                       [NSString stringWithFormat:@"%f,%f|%f,%f", 
+                                        bounds.center.latitude-(bounds.span.latitudeDelta/2.0),
+                                        bounds.center.longitude-(bounds.span.longitudeDelta/2.0),
+                                        bounds.center.latitude+(bounds.span.latitudeDelta/2.0),
+                                        bounds.center.longitude+(bounds.span.longitudeDelta/2.0)], @"bounds", nil];
+    [self initWithParameters:parameters completion:block];
+    [self start];
+}
+
+- (void)geocode:(NSString *)address region:(NSString *)region completion:(void (^)(NSArray *, NSError *))block {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
+                                       address, @"address", 
+                                       region, @"region", nil];
+    [self initWithParameters:parameters completion:block];
+    [self start];
+}
+
+- (void)reverseGeocode:(CLLocationCoordinate2D)coordinate completion:(void (^)(NSArray *, NSError *))block {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
+                                       [NSString stringWithFormat:@"%f,%f", coordinate.latitude, coordinate.longitude], @"latlng", nil];
+    [self initWithParameters:parameters completion:block];
+    [self start];
+    
+}
+
 
 #pragma mark - NSOperation methods
 
@@ -218,7 +252,6 @@ typedef NSUInteger SVGeocoderRequestState;
 // private method; not part of NSOperation
 - (void)finish {
     [connection cancel];
-    [connection release];
     connection = nil;
     
     [self willChangeValueForKey:@"isExecuting"];
@@ -361,12 +394,10 @@ typedef NSUInteger SVGeocoderRequestState;
                         [formattedAddressDict setValue:[streetAddressComponents componentsJoinedByString:@" "] forKey:(NSString*)kABPersonAddressStreetKey];
                     
                     SVPlacemark *placemark = [[SVPlacemark alloc] initWithRegion:region addressDictionary:formattedAddressDict];
-                    [formattedAddressDict release];
                     
                     placemark.formattedAddress = [placemarkDict objectForKey:@"formatted_address"];
                     
                     [placemarksArray addObject:placemark];
-                    [placemark release];
                 }
                 
                 response = placemarksArray;
@@ -393,7 +424,6 @@ typedef NSUInteger SVGeocoderRequestState;
     [self finish];
 }
 
-
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     _querying = NO;
 	
@@ -414,12 +444,12 @@ typedef NSUInteger SVGeocoderRequestState;
 @implementation NSString (URLEncoding)
 
 - (NSString*)encodedURLParameterString {
-    NSString *result = (NSString*)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                          (CFStringRef)self,
+    NSString *result = (__bridge_transfer NSString*)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                          (__bridge CFStringRef)self,
                                                                           NULL,
                                                                           CFSTR(":/=,!$&'()*+;[]@#?|"),
                                                                           kCFStringEncodingUTF8);
-	return [result autorelease];
+	return result;
 }
 
 @end

@@ -33,11 +33,17 @@ typedef enum {
 
 + (SVGeocoder*)reverseGeocode:(CLLocationCoordinate2D)coordinate completion:(void (^)(NSArray *placemarks, NSError *error))block;
 
+- (void)geocode:(NSString *)address completion:(void (^)(NSArray *placemarks, NSError *error))block;
+- (void)geocode:(NSString *)address bounds:(MKCoordinateRegion)bounds completion:(void (^)(NSArray *placemarks, NSError *error))block;
+- (void)geocode:(NSString *)address region:(NSString *)region completion:(void (^)(NSArray *placemarks, NSError *error))block;
+
+- (void)reverseGeocode:(CLLocationCoordinate2D)coordinate completion:(void (^)(NSArray *placemarks, NSError *error))block;
+
 - (void)cancel;
 
 // old API; these methods will soon get deprecated
 
-@property (nonatomic, assign) id<SVGeocoderDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<SVGeocoderDelegate> delegate;
 @property (readonly, getter = isQuerying) BOOL querying;
 
 // Reverse Geocoder

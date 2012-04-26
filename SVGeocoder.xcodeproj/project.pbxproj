@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CD475091549A1DC002B72BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD475081549A1DC002B72BA /* Foundation.framework */; };
+		4CD4750F1549A1DC002B72BA /* SVGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4750E1549A1DC002B72BA /* SVGeocoder.m */; };
+		4CD475171549A1DC002B72BA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD475161549A1DC002B72BA /* SenTestingKit.framework */; };
+		4CD475191549A1DC002B72BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD475181549A1DC002B72BA /* UIKit.framework */; };
+		4CD4751A1549A1DC002B72BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD475081549A1DC002B72BA /* Foundation.framework */; };
+		4CD4751D1549A1DC002B72BA /* libSVGeocoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD475051549A1DC002B72BA /* libSVGeocoder.a */; };
+		4CD475231549A1DC002B72BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CD475211549A1DC002B72BA /* InfoPlist.strings */; };
+		4CD475261549A1DC002B72BA /* SVGeocoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD475251549A1DC002B72BA /* SVGeocoderTests.m */; };
+		4CD475341549A21D002B72BA /* SVPlacemark.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD475321549A21D002B72BA /* SVPlacemark.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CD475351549A21D002B72BA /* SVPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD475331549A21D002B72BA /* SVPlacemark.m */; };
+		4CD4753C1549A24F002B72BA /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 4CD475381549A24F002B72BA /* CHANGELOG.md */; };
+		4CD4753D1549A24F002B72BA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4753A1549A24F002B72BA /* JSONKit.m */; };
+		4CD4753E1549A24F002B72BA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4753B1549A24F002B72BA /* README.md */; };
+		4CD4753F1549A26B002B72BA /* SVGeocoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD4750D1549A1DC002B72BA /* SVGeocoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CD4751B1549A1DC002B72BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CD474FC1549A1DC002B72BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CD475041549A1DC002B72BA;
+			remoteInfo = SVGeocoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CD475051549A1DC002B72BA /* libSVGeocoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVGeocoder.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD475081549A1DC002B72BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CD4750C1549A1DC002B72BA /* SVGeocoder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVGeocoder-Prefix.pch"; sourceTree = "<group>"; };
+		4CD4750D1549A1DC002B72BA /* SVGeocoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVGeocoder.h; sourceTree = "<group>"; };
+		4CD4750E1549A1DC002B72BA /* SVGeocoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGeocoder.m; sourceTree = "<group>"; };
+		4CD475151549A1DC002B72BA /* SVGeocoderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGeocoderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CD475161549A1DC002B72BA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4CD475181549A1DC002B72BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4CD475201549A1DC002B72BA /* SVGeocoderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SVGeocoderTests-Info.plist"; sourceTree = "<group>"; };
+		4CD475221549A1DC002B72BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CD475241549A1DC002B72BA /* SVGeocoderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVGeocoderTests.h; sourceTree = "<group>"; };
+		4CD475251549A1DC002B72BA /* SVGeocoderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGeocoderTests.m; sourceTree = "<group>"; };
+		4CD475321549A21D002B72BA /* SVPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlacemark.h; sourceTree = "<group>"; };
+		4CD475331549A21D002B72BA /* SVPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPlacemark.m; sourceTree = "<group>"; };
+		4CD475381549A24F002B72BA /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		4CD475391549A24F002B72BA /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		4CD4753A1549A24F002B72BA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		4CD4753B1549A24F002B72BA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CD475021549A1DC002B72BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD475091549A1DC002B72BA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD475111549A1DC002B72BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD475171549A1DC002B72BA /* SenTestingKit.framework in Frameworks */,
+				4CD475191549A1DC002B72BA /* UIKit.framework in Frameworks */,
+				4CD4751A1549A1DC002B72BA /* Foundation.framework in Frameworks */,
+				4CD4751D1549A1DC002B72BA /* libSVGeocoder.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CD474FA1549A1DC002B72BA = {
+			isa = PBXGroup;
+			children = (
+				4CD4750A1549A1DC002B72BA /* SVGeocoder */,
+				4CD4751E1549A1DC002B72BA /* SVGeocoderTests */,
+				4CD475071549A1DC002B72BA /* Frameworks */,
+				4CD475061549A1DC002B72BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CD475061549A1DC002B72BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CD475051549A1DC002B72BA /* libSVGeocoder.a */,
+				4CD475151549A1DC002B72BA /* SVGeocoderTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CD475071549A1DC002B72BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CD475371549A24F002B72BA /* JSONKit */,
+				4CD475081549A1DC002B72BA /* Foundation.framework */,
+				4CD475161549A1DC002B72BA /* SenTestingKit.framework */,
+				4CD475181549A1DC002B72BA /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CD4750A1549A1DC002B72BA /* SVGeocoder */ = {
+			isa = PBXGroup;
+			children = (
+				4CD475321549A21D002B72BA /* SVPlacemark.h */,
+				4CD475331549A21D002B72BA /* SVPlacemark.m */,
+				4CD4750D1549A1DC002B72BA /* SVGeocoder.h */,
+				4CD4750E1549A1DC002B72BA /* SVGeocoder.m */,
+				4CD4750B1549A1DC002B72BA /* Supporting Files */,
+			);
+			path = SVGeocoder;
+			sourceTree = "<group>";
+		};
+		4CD4750B1549A1DC002B72BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CD4750C1549A1DC002B72BA /* SVGeocoder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CD4751E1549A1DC002B72BA /* SVGeocoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CD475241549A1DC002B72BA /* SVGeocoderTests.h */,
+				4CD475251549A1DC002B72BA /* SVGeocoderTests.m */,
+				4CD4751F1549A1DC002B72BA /* Supporting Files */,
+			);
+			path = SVGeocoderTests;
+			sourceTree = "<group>";
+		};
+		4CD4751F1549A1DC002B72BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CD475201549A1DC002B72BA /* SVGeocoderTests-Info.plist */,
+				4CD475211549A1DC002B72BA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CD475371549A24F002B72BA /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				4CD475381549A24F002B72BA /* CHANGELOG.md */,
+				4CD475391549A24F002B72BA /* JSONKit.h */,
+				4CD4753A1549A24F002B72BA /* JSONKit.m */,
+				4CD4753B1549A24F002B72BA /* README.md */,
+			);
+			name = JSONKit;
+			path = SVGeocoder/JSONKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4CD475031549A1DC002B72BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD4753F1549A26B002B72BA /* SVGeocoder.h in Headers */,
+				4CD475341549A21D002B72BA /* SVPlacemark.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4CD475041549A1DC002B72BA /* SVGeocoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD475291549A1DC002B72BA /* Build configuration list for PBXNativeTarget "SVGeocoder" */;
+			buildPhases = (
+				4CD475011549A1DC002B72BA /* Sources */,
+				4CD475021549A1DC002B72BA /* Frameworks */,
+				4CD475031549A1DC002B72BA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVGeocoder;
+			productName = SVGeocoder;
+			productReference = 4CD475051549A1DC002B72BA /* libSVGeocoder.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4CD475141549A1DC002B72BA /* SVGeocoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CD4752C1549A1DC002B72BA /* Build configuration list for PBXNativeTarget "SVGeocoderTests" */;
+			buildPhases = (
+				4CD475101549A1DC002B72BA /* Sources */,
+				4CD475111549A1DC002B72BA /* Frameworks */,
+				4CD475121549A1DC002B72BA /* Resources */,
+				4CD475131549A1DC002B72BA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CD4751C1549A1DC002B72BA /* PBXTargetDependency */,
+			);
+			name = SVGeocoderTests;
+			productName = SVGeocoderTests;
+			productReference = 4CD475151549A1DC002B72BA /* SVGeocoderTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CD474FC1549A1DC002B72BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 4CD474FF1549A1DC002B72BA /* Build configuration list for PBXProject "SVGeocoder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CD474FA1549A1DC002B72BA;
+			productRefGroup = 4CD475061549A1DC002B72BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CD475041549A1DC002B72BA /* SVGeocoder */,
+				4CD475141549A1DC002B72BA /* SVGeocoderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CD475121549A1DC002B72BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD475231549A1DC002B72BA /* InfoPlist.strings in Resources */,
+				4CD4753C1549A24F002B72BA /* CHANGELOG.md in Resources */,
+				4CD4753E1549A24F002B72BA /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CD475131549A1DC002B72BA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CD475011549A1DC002B72BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD4750F1549A1DC002B72BA /* SVGeocoder.m in Sources */,
+				4CD475351549A21D002B72BA /* SVPlacemark.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CD475101549A1DC002B72BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CD475261549A1DC002B72BA /* SVGeocoderTests.m in Sources */,
+				4CD4753D1549A24F002B72BA /* JSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CD4751C1549A1DC002B72BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CD475041549A1DC002B72BA /* SVGeocoder */;
+			targetProxy = 4CD4751B1549A1DC002B72BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4CD475211549A1DC002B72BA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CD475221549A1DC002B72BA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CD475271549A1DC002B72BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4CD475281549A1DC002B72BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CD4752A1549A1DC002B72BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DSTROOT = /tmp/SVGeocoder.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SVGeocoder/SVGeocoder-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/SVGeocoder;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4CD4752B1549A1DC002B72BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DSTROOT = /tmp/SVGeocoder.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SVGeocoder/SVGeocoder-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include/SVGeocoder;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4CD4752D1549A1DC002B72BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SVGeocoder/SVGeocoder-Prefix.pch";
+				INFOPLIST_FILE = "SVGeocoderTests/SVGeocoderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4CD4752E1549A1DC002B72BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SVGeocoder/SVGeocoder-Prefix.pch";
+				INFOPLIST_FILE = "SVGeocoderTests/SVGeocoderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CD474FF1549A1DC002B72BA /* Build configuration list for PBXProject "SVGeocoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD475271549A1DC002B72BA /* Debug */,
+				4CD475281549A1DC002B72BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD475291549A1DC002B72BA /* Build configuration list for PBXNativeTarget "SVGeocoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD4752A1549A1DC002B72BA /* Debug */,
+				4CD4752B1549A1DC002B72BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CD4752C1549A1DC002B72BA /* Build configuration list for PBXNativeTarget "SVGeocoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CD4752D1549A1DC002B72BA /* Debug */,
+				4CD4752E1549A1DC002B72BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CD474FC1549A1DC002B72BA /* Project object */;
+}

@@ -17,10 +17,6 @@
 @synthesize region = _region;
 @synthesize formattedAddress;
 
-- (void)dealloc {
-    self.formattedAddress = nil;
-    [super dealloc];
-}
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)aCoordinate addressDictionary:(NSDictionary *)addressDictionary {
 	
